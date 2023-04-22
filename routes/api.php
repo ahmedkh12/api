@@ -23,7 +23,7 @@ use App\Http\Controllers\catController;
 
 // });
 
-Route::get('getcat', [catController::class, 'index'] );
+Route::get('getcat', [catController::class, 'index'] )->middleware('ensure');// protect route
 Route::get('show_cat/{cat_id}', [catController::class, 'show_cat'] );
 Route::post('insert_cat', [catController::class, 'store'] );
 Route::post('update_cat/{id}', [catController::class, 'update'] );
